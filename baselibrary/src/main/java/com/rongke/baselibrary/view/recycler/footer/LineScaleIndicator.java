@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by jh352160 on 2018/4/20.
  */
-public class LineScaleIndicator extends Indicator{
+public class LineScaleIndicator extends Indicator {
     public static final float SCALE=1.0f;
 
     float[] scaleYFloats=new float[]{SCALE,

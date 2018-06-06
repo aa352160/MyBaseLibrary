@@ -17,7 +17,7 @@ import java.lang.reflect.ParameterizedType;
  * Created by jh352160 on 2018/2/5.
  */
 
-public abstract class BaseFragment<E extends BasePresenter> extends Fragment{
+public abstract class BaseFragment<E extends BasePresenter> extends Fragment {
     protected Context mContext;
     public E mPresenter;
 

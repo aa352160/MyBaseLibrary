@@ -22,6 +22,7 @@ import com.yan.pullrefreshlayout.PullRefreshLayout;
 import com.yan.pullrefreshlayout.ShowGravity;
 import com.yan.pullrefreshlayout.ViscousInterpolator;
 
+
 /**
  * Created by jh352160 on 2018/4/20.
  */
@@ -83,7 +84,7 @@ public class ClassicLoadMoreView extends FrameLayout implements PullRefreshLayou
     private void initView() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_refresh_footer, this, true);
         tv = (TextView) findViewById(R.id.title);
-        tv.setOnClickListener(new View.OnClickListener() {
+        tv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext().getApplicationContext(), "you just touched me", Toast.LENGTH_SHORT).show();

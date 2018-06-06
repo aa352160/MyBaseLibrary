@@ -1,4 +1,4 @@
-package com.rongke.baselibrary.other;
+package com.rongke.baselibrary.util;
 
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;

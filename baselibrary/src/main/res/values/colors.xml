@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#FF5657</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color333333">#333333</color>
+    <color name="color666666">#666666</color>
+    <color name="color999999">#999999</color>
+    <color name="color_public_line">#e5e5e5</color>
+
+    <!-- baseLibrary -->
     <color name="primary_title_text_color">#FFFFFF</color>
     <color name="primary_text_color">#333333</color>
     <color name="primary_middle_text_color">#666666</color>
     <color name="primary_hint_text_color">#999999</color>
     <color name="bg_home_record_tag">#44000000</color>
-    <color name="color_white">#FFFFFF</color>
     <color name="color_red">#FE4947</color>
     <color name="color_green_light">#12CCBE</color>
     <color name="color_gary_light">#EFEFEF</color>
@@ -15,4 +20,7 @@
     <color name="color9EFFFFFF">#9EFFFFFF</color>
     <color name="colorFF999999">#FF999999</color>
     <color name="colorFF666666">#FF666666</color>
+
+    <!-- project -->
+    <color name="color_primary">#4657FF</color>
 </resources>

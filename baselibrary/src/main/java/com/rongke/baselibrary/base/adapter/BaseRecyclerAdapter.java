@@ -153,7 +153,7 @@ public abstract class BaseRecyclerAdapter<M> extends RecyclerView.Adapter{
     }
 
     public interface OnItemClickListener<M>{
-        void onItemClick(M item,int position);
+        void onItemClick(M item, int position);
     }
 
     public void setData(List<M> datas){

@@ -20,4 +20,15 @@ public class StringUtil {
         }
         return true;
     }
+
+    /**
+     * 去除字符串中emoji
+     */
+    public static String replaceEmoji(String str) {
+        if(!CommonUtil.isEmpty(str)){
+            return str.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "");
+        }else{
+            return str;
+        }
+    }
 }

@@ -1,7 +1,6 @@
 package com.rongke.baselibrary.util;
 
 import android.content.Context;
-import android.util.TypedValue;
 
 /**
  * Created by jh352160 on 2018/3/8.

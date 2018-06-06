@@ -44,19 +44,17 @@ public abstract class BaseActivity<E extends BasePresenter> extends FragmentActi
 
     public void setContentView() {
         setContentView(R.layout.activity_base);
+        FrameLayout container = findViewById(R.id.container);
         LinearLayout rootView = findViewById(R.id.rl_root_root);
 //        LayoutInflater.from(this).inflate(setLayoutRes(),container);
-        int layoutRes = setLayoutRes();
-        if (layoutRes != 0) {
-            View containerView = LayoutInflater.from(this).inflate(layoutRes, rootView, false);
-            rootView.addView(containerView);
-        }
+        View containerView = LayoutInflater.from(this).inflate(setLayoutRes(), rootView, false);
+        rootView.addView(containerView);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         if (Build.VERSION.SDK_INT>=21) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.primary_color));
+            window.setStatusBarColor(getResources().getColor(R.color.color_primary));
         }
 
         findViewById(R.id.iv_icon_back).setOnClickListener(new View.OnClickListener() {
@@ -80,23 +78,14 @@ public abstract class BaseActivity<E extends BasePresenter> extends FragmentActi
         return null;
     }
 
-    /**
-     * 设置页面的布局文件，如果返回值为0，则不会加载布局
-     */
     public abstract @LayoutRes int setLayoutRes();
     public abstract void initView();
     public void initListener(){}
 
-    /**
-     * 隐藏标题栏
-     */
     public void hideTitleBar(boolean isHidden){
         findViewById(R.id.common_title).setVisibility(isHidden ? View.GONE : View.VISIBLE);
     }
 
-    /**
-     * 设置标题栏标题
-     */
     public void setTitle(String title){
         ((TextView) findViewById(R.id.tv_title)).setText(title);
     }

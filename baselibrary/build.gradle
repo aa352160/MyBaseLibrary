@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.aa352160'
 
 android {
@@ -22,6 +21,10 @@ android {
         }
     }
 
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -43,4 +46,11 @@ dependencies {
 
     //列表控件
     api 'com.yan:pullrefreshlayout:2.2.1'
+
+    //富文本
+    api 'com.zzhoujay.richtext:richtext:2.5.4'
+
+    //RxPermission 其中已有RxJava 2.1.8的依赖
+    api 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    api 'io.reactivex:rxjava:1.0.14'
 }

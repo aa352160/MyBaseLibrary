@@ -3,7 +3,7 @@
     android:id="@+id/rl_title_bar"
     android:layout_width="match_parent"
     android:layout_height="90px"
-    android:background="@color/primary_color">
+    android:background="@color/color_white">
 
     <ImageView
         android:id="@+id/iv_icon_back"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/primary_title_text_color"
+        android:textColor="@color/primary_text_color"
         android:textSize="33px" />
 
     <ImageView

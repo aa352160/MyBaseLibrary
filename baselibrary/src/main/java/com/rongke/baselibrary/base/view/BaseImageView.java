@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.bumptech.glide.request.RequestOptions;
-import com.rongke.baselibrary.other.GlideApp;
+import com.rongke.baselibrary.util.GlideApp;
 
 /**
  * Created by jh352160 on 2018/2/6.

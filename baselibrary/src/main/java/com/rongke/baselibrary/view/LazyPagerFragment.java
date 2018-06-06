@@ -11,7 +11,7 @@ import com.rongke.baselibrary.base.BasePresenter;
  * Created by jh352160 on 2018/3/29.
  */
 
-public abstract class LazyPagerFragment<E extends BasePresenter> extends BaseFragment<E>{
+public abstract class LazyPagerFragment<E extends BasePresenter> extends BaseFragment<E> {
     private boolean isVisible = false;
     private boolean isContextInitialize = false;
     private boolean isInitialize = false;

@@ -35,18 +35,13 @@ public abstract class BaseRecyclerActivity<E extends BasePresenter> extends Base
         initActivityView();
         targetRecycler = findViewById(R.id.recycler_view);
         refreshLayout = findViewById(R.id.refresh_layout);
-        refreshLayout.setFooterView(new ClassicLoadMoreView(getApplicationContext(), refreshLayout));
-        ClassicsRefreshHeader header = new ClassicsRefreshHeader(getApplicationContext());
-        AutoUtils.auto(header);
-        refreshLayout.setHeaderView(header);
+
         initRecyclerView(targetRecycler);
         refreshLayout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
             @Override public void onRefresh() { refresh(); }
             @Override public void onLoading() { loadMore(); }
         });
         refreshLayout.setTargetView(targetRecycler);
-        refreshLayout.setRefreshTriggerDistance(AutoUtils.getDisplayHeightValue(150));
-        refreshLayout.setLoadTriggerDistance(AutoUtils.getDisplayHeightValue(150));
         initData();
     }
 
@@ -65,8 +60,23 @@ public abstract class BaseRecyclerActivity<E extends BasePresenter> extends Base
         page++;
     }
 
-    protected void loadMoreComplete() { refreshLayout.loadMoreComplete(); }
-    protected void refreshComplete() { refreshLayout.refreshComplete(); }
+    public void loadMoreComplete() { refreshLayout.loadMoreComplete(); }
+    public void refreshComplete() { refreshLayout.refreshComplete(); }
     protected void startRefresh(){ refreshLayout.autoRefresh(); }
     protected void startLoadMore(){ refreshLayout.autoLoading(); }
+    protected void setLoadMoreEnable(boolean isEnable){
+        if (isEnable){
+            ClassicLoadMoreView classicLoadMoreView = new ClassicLoadMoreView(getApplicationContext(),refreshLayout);
+            refreshLayout.setFooterView(classicLoadMoreView);
+            refreshLayout.setLoadTriggerDistance(AutoUtils.getDisplayHeightValue(150));
+        }
+    }
+    protected void setRefreshEnable(boolean isEnable){
+        if (isEnable){
+            ClassicsRefreshHeader header = new ClassicsRefreshHeader(getApplicationContext());
+            AutoUtils.auto(header);
+            refreshLayout.setHeaderView(header);
+            refreshLayout.setRefreshTriggerDistance(AutoUtils.getDisplayHeightValue(150));
+        }
+    }
 }
